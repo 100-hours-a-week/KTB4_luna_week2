@@ -4,10 +4,7 @@ import Model.Entity.Drama;
 import Model.Entity.Media;
 import Model.Entity.Movie;
 import Model.Entity.Music;
-import Model.Enum.AudioCodec;
-import Model.Enum.ContentRating;
-import Model.Enum.MusicGenre;
-import Model.Enum.Resolution;
+import Model.Enum.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,22 +25,23 @@ public class SampleData {
             new Movie(
                     "인터스텔라", "크리스토퍼 놀란", 2014,
                     169, Resolution.FHD,
-                    new String[]{"Wavve", "쿠팡 플레이", "Apple TV"},
-                    new String[]{"한국어", "영어"},
+                    new Platform[]{Platform.APPLETV, Platform.COUPANGPLAY, Platform.WAVVE},
+                    new SubLanguage[]{SubLanguage.KOREAN, SubLanguage.ENGLISH},
                     ContentRating.TWELVE, 8.7
             ),
             new Movie(
                     "라라랜드", "데이미언 셔젤", 2016,
                     128, Resolution.FHD,
-                    new String[]{"WATCHA", "Wavve", "쿠팡 플레이"},
-                    new String[]{"한국어", "영어"},
+                    new Platform[]{ Platform.COUPANGPLAY, Platform.WATCHA, Platform.WAVVE},
+                    new SubLanguage[]{SubLanguage.KOREAN, SubLanguage.ENGLISH},
                     ContentRating.TWELVE, 8.0
             ),
             new Movie(
                     "F1 더 무비", "조셉 코신스키", 2025,
                     155, Resolution.UHD_4K,
-                    new String[]{"Apple TV+", "쿠팡 플레이", "TVING", "Wavve"},
-                    new String[]{"한국어", "영어", "프랑스어"},
+                    new Platform[]{Platform.APPLETV, Platform.COUPANGPLAY, Platform.TVING, Platform.WAVVE},
+                    new SubLanguage[]{SubLanguage.KOREAN, SubLanguage.ENGLISH, SubLanguage.FRENCH},
+
                     ContentRating.TWELVE, 7.9
             )
     );
@@ -55,15 +53,15 @@ public class SampleData {
             new Drama(
                     "오징어 게임", "싸이런픽쳐스", 2021,
                     Resolution.UHD_4K,
-                    new String[]{"Netflix"},
-                    new String[]{"한국어", "영어", "일본어", "스페인어"},
+                    new Platform[]{Platform.NETFLIX},
+                    new SubLanguage[]{SubLanguage.KOREAN, SubLanguage.ENGLISH, SubLanguage.JAPANESE, SubLanguage.SPANISH},
                     8.0, 9, 60
             ),
             new Drama(
                     "체르노빌", "HBO", 2019,
                     Resolution.HD,
-                    new String[]{"쿠팡 플레이"},
-                    new String[]{"한국어", "영어"},
+                    new Platform[]{Platform.COUPANGPLAY},
+                    new SubLanguage[]{SubLanguage.KOREAN, SubLanguage.ENGLISH},
                     9.3, 5, 70
             )
     );

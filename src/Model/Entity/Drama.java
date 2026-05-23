@@ -1,6 +1,8 @@
 package Model.Entity;
 
+import Model.Enum.Platform;
 import Model.Enum.Resolution;
+import Model.Enum.SubLanguage;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -8,7 +10,7 @@ public class Drama extends Video{
     private final int episodes;
     private final int episodeMinutes;
     private AtomicInteger atomicCounter;
-    public Drama(String title, String creator, int releaseYear, Resolution resolution, String[] platforms, String[] subtitles, double rating, int episodes, int episodeMinutes) {
+    public Drama(String title, String creator, int releaseYear, Resolution resolution, Platform[] platforms, SubLanguage[] subtitles, double rating, int episodes, int episodeMinutes) {
         super(title, creator, releaseYear, resolution, platforms, subtitles, rating);
         validate(episodes, episodeMinutes);
         this.episodes = episodes;

@@ -1,15 +1,15 @@
 package Model.Entity;
 
 import Model.Enum.ContentRating;
+import Model.Enum.Platform;
 import Model.Enum.Resolution;
+import Model.Enum.SubLanguage;
 
 public class Movie extends Video{
     private final int runtimeMinutes;
     private ContentRating contentRating;
     private final Object lock =  new Object();
-    public Movie(String title, String director, int releaseYear,
-                 int runtimeMinutes, Resolution resolution, String[] platforms,
-                 String[] subtitles, ContentRating contentRating, double rating) {
+    public Movie(String title, String director, int releaseYear, int runtimeMinutes, Resolution resolution, Platform[] platforms, SubLanguage[] subtitles, ContentRating contentRating, double rating) {
         super(title, director, releaseYear, resolution, platforms, subtitles, rating);
         validate(runtimeMinutes, contentRating);
         this.runtimeMinutes = runtimeMinutes;

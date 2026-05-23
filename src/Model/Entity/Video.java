@@ -1,18 +1,20 @@
 package Model.Entity;
 
+import Model.Enum.Platform;
 import Model.Enum.Resolution;
+import Model.Enum.SubLanguage;
 
 public abstract class Video extends Media{
     // 해상도
     private final Resolution resolution;
     // 제공 플랫폼
-    private String[] platforms;
+    private Platform[] platforms;
     // 제공되는 자막
-    private String[] subtitles;
+    private SubLanguage[] subtitles;
     // 나중에 평점 추가 하면서 rating을 다시 계산하는 과정 추가?
     private double rating;
 
-    public Video(String title, String creator, int releaseYear, Resolution resolution, String[] platforms, String[] subtitles, double rating) {
+    public Video(String title, String creator, int releaseYear, Resolution resolution, Platform[] platforms, SubLanguage[] subtitles, double rating) {
         super(title, creator, releaseYear);
         validate(resolution, rating);
         this.platforms = platforms;
@@ -21,17 +23,11 @@ public abstract class Video extends Media{
         this.rating = rating;
     }
     // getter
-    public String getSubtitles() {
-        return subtitles.length == 0 ? "없음" : String.join(", ", subtitles);
-    }
     public double getRating() {
         return rating;
     }
     public String getResolution() {
         return resolution.getLabel();
-    }
-    public String getPlatforms() {
-        return platforms.length == 0 ? "없음" : String.join(", ", platforms);
     }
     @Override
     public void play(){
